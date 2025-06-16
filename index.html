@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Nav Mobile Funcional</title>
+</head>
+<style>
+    /* Estilo da sua nav original */
+    nav {
+        background: linear-gradient(90deg, #bfa14a, #d4af37);
+        color: white; /* Adicionado para que os links no desktop fiquem brancos */
+    }
+
+    /* Efeito hover para os links */
+    li a:hover {
+        border-bottom-width: 2px;
+        border-bottom-color: white;
+        transition: 400ms;
+    }
+
+    #img_atuacao {
+        background: url(img/imagem_background1.png) right center;
+        background-size: cover;
+    }
+
+
+</style>
+<body class="bg-black">
+    <nav class="flex justify-between items-center"> <!--Inicio Nav-->
+        <div class="p-1">
+            <img class="max-h-24 object-contain rounded-md" src="img/LOGOTIPO APROVADO_1.png" alt="logo">
+        </div>
+        <div class="mr-10 hidden md:block">
+            <ul class="flex gap-4">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#atuacao">Áreas de Atuação</a></li>
+                <li><a href="#equipe">Nossa Equipe</a></li>
+                <li><a href="#fale_conosco">Fale Conosco</a></li>
+            </ul>
+        </div>
+        <div class="mr-4 flex md:hidden">
+            <button id="menu-button" type="button" class="z-50 hover:cursor-pointer inline-flex items-center justify-center p-2 rounded-md text-white focus:outline-none transition duration-150 ease-in-out" aria-controls="mobile-menu" aria-expanded="false">
+                <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav> <!--Fim Nav-->
+    
+    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/50 z-30"></div>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-[#1c1c1c] text-white transform translate-x-full transition-transform duration-300 ease-in-out z-40">
+        <ul class="flex flex-col gap-6 p-6 pt-24 text-lg font-semibold">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#atuacao">Áreas de Atuação</a></li>
+            <li><a href="#equipe">Nossa Equipe</a></li>
+            <li><a href="#fale_conosco">Fale Conosco</a></li>
+        </ul>
+    </div>
+
+    <section class="pt-28 p-6 text-white mx-2"> <!--Inicio Seção Inicio-->
+        <div id="inicio"> <!--Conteúdo Inicial-->
+            <h1 class="text-4xl md:text-5xl font-bold">Bem-Vindo ao Escritório Exemplo</h1>
+             <p class="mt-4 text-lg text-gray-300 max-w-2xl">
+                Com atuação sólida nas áreas de Direito Cível, Trabalhista e Empresarial, oferecemos serviços jurídicos com ética, excelência e total dedicação aos nossos clientes.
+            </p>
+             <ul class="mt-6 space-y-2 text-gray-300">
+                <li>✔ Atendimento personalizado e humanizado</li>
+                <li>✔ Profissionais especializados e experientes</li>
+                <li>✔ Soluções jurídicas ágeis e eficazes</li>
+                <li>✔ Atendimento presencial e remoto</li>
+            </ul>
+        </div> <!--Fim conteúdo Inicial-->
+    </section> <!--Fim seção Inicio-->
+
+    <section id="atuacao" class="relative bg-black text-white py-20 mx-4"> <!--Seção Áreas de atuação-->
+        <!-- Imagem de fundo com opacidade escura -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-30" id="img_atuacao"></div>
+
+        <!-- Conteúdo acima da imagem -->
+        <div class="relative z-10 max-w-6xl px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Áreas de Atuação</h2>
+            <p class="text-gray-200 max-w-2xl mb-10">
+            Nosso escritório atua com excelência em áreas estratégicas do Direito, oferecendo assessoria especializada e comprometida com os resultados.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 text-gray-100">
+            <div class="bg-[#1f1f1f]/80 p-6 rounded-md shadow-md">
+                <h3 class="text-xl font-bold text-white mb-2">Direito Previdenciário</h3>
+                <p>Atuação em aposentadorias, pensões, auxílios, revisões e benefícios junto ao INSS e RPPS.</p>
+            </div>
+            <div class="bg-[#1f1f1f]/80 p-6 rounded-md shadow-md">
+                <h3 class="text-xl font-bold text-white mb-2">Direito Político</h3>
+                <p>Assessoria jurídica para candidatos, partidos e agentes públicos. Atuação em causas eleitorais e questões de inelegibilidade.</p>
+            </div>
+            </div>
+        </div>
+    </section> <!-- Fim seção Áreas de Atuação-->
+
+    <section id="equipe" class="py-20 px-6 text-white bg-black"> <!--Inicio Nossa Equipe-->
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossa Equipe:</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center mt-3">
+                <img src="img/img_adv_ilustrativa.png" alt="imagem Dra. Ana Silva" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <h3 class="text-xl font-semibold mt-4">Dra. Ana Silva</h3>
+                <p class="text-sm text-gray-300">Especialista em Direito Previdenciário</p>
+                <p class="mt-2 text-sm text-gray-400">Com mais de 10 anos de experiência, é dedicada a garantir e defender os direitos dos segurados do INSS, buscando a concessão do melhor benefício.</p>
+            </div>
+            <div class="text-center mt-3">
+                <img src="img/imagem_adv_ilustrativo2.png" alt="imagem Dr. Carlos" class="rounded-full w-32 h-32 mx-auto object-cover">
+                <h3 class="text-xl font-semibold mt-4">Dr. Carlos Pereira</h3>
+                <p class="text-sm text-gray-300">Especialista em Direito Político</p>
+                <p class="mt-2 text-sm text-gray-400">
+                    Atua na defesa de direitos políticos e na regularidade de mandatos, oferecendo soluções estratégicas para os desafios da esfera eleitoral e partidária.
+                </p>
+            </div>
+        </div>
+    </section> <!-- Fim seção Nossa Equipe-->
+
+    <section id="fale_conosco" class="py-20 px-6 text-white bg-neutral-900">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Fale Conosco:</h2>
+        <p class="text-gray-200 max-w-2xl mb-10">
+            Preencha o formulário abaixo que retornaremos o contato.
+        </p>
+        <div class="flex flex-col md:flex-row gap-10">
+            <form id="contato" class="flex-1 grid gap-6 w-1/2 text-black" action="/enviar" method="POST">
+                <input class="p-2 rounded-sm" type="text" name="name" required placeholder="Nome">
+                <input class="p-2 rounded-sm" type="email" name="email" required placeholder="Email">
+                <input class="p-2 rounded-sm" type="text" name="assunto" required placeholder="Assunto">
+                <textarea class="p-2 rounded-sm" name="message" rows="5" required placeholder="Comentário ou Mensagem"></textarea>
+
+                <label>
+                    
+                    <p class="text-gray-200 max-w-2xl mb-3">
+                        Informamos que os seus dados pessoais inseridos neste campo, a partir deste momento, são utilizados exclusivamente para retornar à solicitação feita pelo titular de dados nos termos do artigo 7º, V, da Lei nº 13.709/18 (LGPD).
+                    </p>
+                    <input type="checkbox" name="lgpd_consent" required>
+                    <strong class="text-white">Li e aceito os termos.</strong> 
+                </label>
+                <button class="bg-[#bfa14a] text-white w-24 h-14  hover:ease-linear hover:bg-[#d4af37] duration-300" type="submit" value="Enviar">Enviar</button>
+            </form>
+            <div id="success-card" class="fixed top-5 right-5 bg-green-500 text-white p-4 rounded-md shadow-md hidden z-50 transition duration-500">
+                <strong>Mensagem enviada com sucesso!</strong>
+            </div>
+
+            <div id="danger-card" class="fixed top-5 right-5 bg-red-600 text-white p-4 rounded-md shadow-md hidden z-50 transition duration-500">
+                <strong>Falha ao enviar mensagem!</strong>
+            </div>
+
+            <div class="flex-1 md:ml-36">
+                <div class="mb-4">
+                    <p class="max-w-2xl text-[#bfa14a] mb-2">Telefone/Whatsapp</p>
+                    <p>(86) 99999-9999</p>
+                    <p>(86) 99999-9999</p>
+                </div>
+                
+                <div class="mb-4">
+                    <p class="max-w-2xl text-[#bfa14a] mb-2">E-mail</p>
+                    <p>contato@exemplo.com</p>
+                </div>
+
+                <div class="mb-4">
+                    <p class="max-w-2xl text-[#bfa14a] mb-2">Endereço</p>
+                    <p>Endereço Exemplo, 123</p>
+                </div>
+
+                <div class="mb-4">
+                    <p class="max-w-2xl text-[#bfa14a] mb-2">Redes Sociais</p>
+                    <span><a href="#" class="fa-brands fa-instagram cursor-pointer"></a></span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <a href="https://wa.me/5586988923204" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-3 rounded-3xl shadow-lg z-50" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        const menuButton = document.getElementById("menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const menuOverlay = document.getElementById("menu-overlay");
+        emailjs.init("WgvXyaA_5nxVa2Z18");
+
+        document.getElementById("contato").addEventListener("submit", function(e) {
+            e.preventDefault();
+            emailjs.sendForm("service_4c5ecuu", "template_etz78oh", this)
+            .then(() => {
+                const card = document.getElementById("success-card");
+                card.classList.remove("hidden");
+
+                setTimeout(() => {
+                    card.classList.add("hidden");
+                }, 4000);
+
+                this.reset();
+            })
+
+            .catch(() => {
+                const danger_card = document.getElementById("danger-card");
+                danger_card.classList.remove("hidden");
+
+                setTimeout(() => {
+                    danger_card.classList.add("hidden");
+                }, 4000);
+
+                this.reset();
+            });
+
+        });
+
+        function toggleMenu() {
+            // Alterna a posição do menu (dentro/fora da tela)
+            mobileMenu.classList.toggle("translate-x-full");
+            
+            // Mostra/Esconde o overlay
+            menuOverlay.classList.toggle("hidden");
+
+            // Alterna o ícone entre 'bars' (hambúrguer) e 'xmark' (X)
+            if (mobileMenu.classList.contains("translate-x-full")) {
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.add("fa-bars");
+                menuButton.setAttribute("aria-expanded", "false");
+            } else {
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-xmark");
+                menuButton.setAttribute("aria-expanded", "true");
+            }
+        }
+
+        // Event listener para o botão
+        menuButton.addEventListener("click", toggleMenu);
+
+        // Event listener para o overlay (fechar ao clicar fora)
+        menuOverlay.addEventListener("click", toggleMenu);
+
+        const linksMenu = mobileMenu.querySelectorAll('a');
+        linksMenu.forEach(linksMenu => {
+            linksMenu.addEventListener('click', () => {
+                toggleMenu();
+            });
+        })      
+    </script>
+</body>
+</html>
