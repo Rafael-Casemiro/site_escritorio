@@ -61,4 +61,4 @@ linksMenu.forEach(linksMenu => {
     linksMenu.addEventListener('click', () => {
         toggleMenu();
     });
-})
+});
