@@ -2,11 +2,11 @@ const menuButton = document.getElementById("menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
 const menuIcon = document.getElementById("menu-icon");
 const menuOverlay = document.getElementById("menu-overlay");
-emailjs.init("WgvXyaA_5nxVa2Z18");
+emailjs.init("xvpiAAL-Zu2cR0FsS");
 
 document.getElementById("contato").addEventListener("submit", function(e) {
     e.preventDefault();
-    emailjs.sendForm("service_4c5ecuu", "template_etz78oh", this)
+    emailjs.sendForm("service_uh5ui8k", "template_x4sqlgf", this)
     .then(() => {
         const card = document.getElementById("success-card");
         card.classList.remove("hidden");
