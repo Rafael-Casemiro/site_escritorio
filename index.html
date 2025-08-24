@@ -28,6 +28,10 @@
         background-size: cover;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
 
 </style>
 <body class="bg-black">
@@ -63,7 +67,7 @@
 
     <section class="pt-28 p-6 text-white mx-2"> <!--Inicio Seção Inicio-->
         <div id="inicio"> <!--Conteúdo Inicial-->
-            <h1 class="text-4xl md:text-5xl font-bold">Bem-Vindo ao Escritório Exemplo</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-[#bfa14a]">Bem-Vindo ao Escritório Exemplo</h1>
              <p class="mt-4 text-lg text-gray-300 max-w-2xl">
                 Com atuação sólida nas áreas de Direito Cívil, Trabalhista e Empresarial, oferecemos serviços jurídicos com ética, excelência e total dedicação aos nossos clientes.
             </p>
@@ -101,17 +105,19 @@
     </section> <!-- Fim seção Áreas de Atuação-->
 
     <section id="equipe" class="py-20 px-6 text-white bg-black"> <!--Inicio Nossa Equipe-->
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossa Equipe:</h2>
+        <h2 class="text-3xl  md:text-4xl font-bold mb-4 text-[#bfa14a]">Nossa Equipe:</h2>
         <div class="grid md:grid-cols-3 gap-6">
             <div class="text-center mt-3">
-                <img src="img/img_adv_ilustrativa.png" alt="imagem Dra. Ana Silva" class="rounded-full w-32 h-32 mx-auto object-cover">
-                <h3 class="text-xl font-semibold mt-4">Dra. Ana Silva</h3>
-                <p class="text-sm text-gray-300">Especialista em Direito Previdenciário</p>
-                <p class="mt-2 text-sm text-gray-400">Com mais de 10 anos de experiência, é dedicada a garantir e defender os direitos dos segurados do INSS, buscando a concessão do melhor benefício.</p>
+                <img src="img/img_adv_ilustrativa.png" alt="imagem Dra. Ana Silva" class="w-60 h-80 mx-auto object-cover">
+                <div class="text-center">
+                    <h3 class="text-xl text-[#bfa14a] font-semibold mt-4">Dra. Ana Silva</h3>
+                    <p class="text-sm text-gray-300">Especialista em Direito Previdenciário</p>
+                    <p class="mt-2 text-sm text-gray-400">Com mais de 10 anos de experiência, é dedicada a garantir e defender os direitos dos segurados do INSS, buscando a concessão do melhor benefício.</p>
+                </div>
             </div>
             <div class="text-center mt-3">
-                <img src="img/imagem_adv_ilustrativo2.png" alt="imagem Dr. Carlos" class="rounded-full w-32 h-32 mx-auto object-cover">
-                <h3 class="text-xl font-semibold mt-4">Dr. Carlos Pereira</h3>
+                <img src="img/imagem_adv_ilustrativo2.png" alt="imagem Dr. Carlos" class="w-60 h-80 mx-auto object-cover">
+                <h3 class="text-xl text-[#bfa14a] font-semibold mt-4">Dr. Carlos Pereira</h3>
                 <p class="text-sm text-gray-300">Especialista em Direito Político</p>
                 <p class="mt-2 text-sm text-gray-400">
                     Atua na defesa de direitos políticos e na regularidade de mandatos, oferecendo soluções estratégicas para os desafios da esfera eleitoral e partidária.
@@ -126,10 +132,10 @@
             Preencha o formulário abaixo que retornaremos o contato.
         </p>
         <div class="flex flex-col md:flex-row gap-10">
-            <form id="contato" class="flex-1 grid gap-6 w-1/2 text-black" action="/enviar" method="POST">
-                <input class="p-2 rounded-sm" type="text" name="name" required placeholder="Nome">
-                <input class="p-2 rounded-sm" type="email" name="email" required placeholder="Email">
-                <input class="p-2 rounded-sm" type="text" name="assunto" required placeholder="Assunto">
+            <form id="contato" class="flex-1 grid gap-6 w-full md:w-1/2 text-black" action="/enviar" method="POST">
+                <input class="p-2 rounded-sm" type="text" name="name" required autocomplete="name" placeholder="Nome">
+                <input class="p-2 rounded-sm" type="email" name="email" required autocomplete="email" placeholder="Email">
+                <input class="p-2 rounded-sm" type="text" name="assunto" required  placeholder="Assunto">
                 <textarea class="p-2 rounded-sm" name="message" rows="5" required placeholder="Comentário ou Mensagem"></textarea>
 
                 <label>
@@ -179,5 +185,14 @@
     <a href="https://wa.me/5586988923204" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-3 rounded-3xl shadow-lg z-50" aria-label="WhatsApp">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
+    
+    <footer class="bg-black text-gray-400 p-6 text-center">
+        <p>
+            &copy; 2025 Escritório Exemplo. 
+            <a href="/politica-de-privacidade.html" class="text-[#bfa14a] underline"> Política de Privacidade</a>
+        </p>
+    </footer>
+
+
 </body>
 </html>
